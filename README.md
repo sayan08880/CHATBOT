@@ -1,52 +1,313 @@
-Here's a summary of the functionalities provided by the AI chatbot based on the code you've shared:
+# VISION – Web AI Chatbot
 
-type "help" to help the chatbot
+**VISION** is a lightweight **browser-based AI chatbot** built using **HTML, CSS, and JavaScript**.
+It provides a simple conversational interface with multiple utilities such as:
 
-### AI Chatbot Functionalities:
+* Voice interaction
+* Math problem solving
+* Encoding and decoding text
+* Guess-the-number game
+* Time and date responses
+* Google search suggestions
+* Thank-you note generator
 
-1. **Greeting Handling:**
-   - Responds with "HELLO, GOOD MORNING!", "HELLO, GOOD NOON!", "HELLO, GOOD AFTERNOON!", "HELLO, GOOD EVENING!", or "HELLO, GOOD NIGHT!" based on the current time when greeted with "hi", "hello", or "hey".
+The chatbot runs **entirely in the browser** without requiring a backend server.
 
-2. **Time and Date Information:**
-   - Provides the current time when asked about "time".
-   - Gives the current date when asked about "date".
+---
 
-3. **User Name Management:**
-   - Allows users to set their name with "save my name as [name]".
-   - Responds with the saved name when asked "who am i".
+# Features
 
-4. **Math Problem Solving:**
-   - Solves basic mathematical expressions when entered by the user.
+### Conversational Chat Interface
 
-5. **Guess the Number Game:**
-   - Initiates a game where the user guesses a number between 1 to 100 when "game" is typed.
-   - Provides feedback if the guess is too high, too low, or correct, along with the number of attempts taken.
+Users can type messages and receive automated responses from the chatbot.
 
-6. **Help Command:**
-   - Lists available commands when "help" is typed.
+---
 
-7. **Google Search Integration:**
-   - Offers to search Google for user queries that don't match predefined commands, asking for confirmation to proceed.
+### Voice Interaction
 
-8. **Text Encoding/Decoding:**
-   - Encodes text to numeric codes or decodes numeric codes back to text using specific commands "encode < [text]" and "decode < [code]".
+VISION supports:
 
-9. **Thank You Note Generator:**
-   - Generates a personalized thank you note when "thank you note" is entered, asking for recipient, reason, and a personal message.
+* **Speech Recognition** (voice input)
+* **Text-to-Speech** (bot replies spoken aloud)
 
-10. **Voice Interaction:**
-    - Supports voice input for commands if the browser supports the Web Speech API, allowing users to interact without typing.
+Technologies used:
 
-11. **Chat Interface Management:**
-    - Displays messages in a scrollable chatbox, with messages from the bot and user differentiated visually.
-    - Uses text-to-speech to voice bot responses.
-    - Manages chat history by removing older messages once the chat exceeds 50 messages.
+* Web Speech API
+* SpeechSynthesis
 
-12. **Miscellaneous Commands:**
-    - Repeats the last bot response when "repeat" is typed.
-    - Offers a goodbye message for "bye", "tata", or "off".
+---
 
-13. **Weather Information (Placeholder):**
-    - Placeholder for weather updates which requires backend integration to function fully.
+### Math Solver
 
-This chatbot provides a basic but interactive environment for users to engage in simple tasks, games, and information retrieval within the web browser.
+The chatbot can solve mathematical expressions using **math.js**.
+
+Example:
+
+```
+5 + 10 * 3
+```
+
+Response:
+
+```
+THE ANSWER IS: 35
+```
+
+---
+
+### Guess The Number Game
+
+Type:
+
+```
+game
+```
+
+The chatbot will generate a number between **1 and 100** and ask the user to guess it.
+
+Commands during the game:
+
+```
+exit
+```
+
+to stop the game.
+
+---
+
+### Name Memory
+
+You can save your name.
+
+Example:
+
+```
+save my name as sayan
+```
+
+Then ask:
+
+```
+who am i
+```
+
+The bot will remember your name during the session.
+
+---
+
+### Encoding System
+
+VISION can convert text into a **numeric code format**.
+
+Example:
+
+```
+encode < hello
+```
+
+Output:
+
+```
+8 5 12 12 15
+```
+
+Rules:
+
+* lowercase letters → number
+* uppercase letters → +number
+* digits → -number
+
+Example:
+
+```
+encode < Hello123
+```
+
+---
+
+### Decoding System
+
+Convert numeric code back into text.
+
+Example:
+
+```
+decode < 8 5 12 12 15
+```
+
+Output:
+
+```
+hello
+```
+
+---
+
+### Google Search Assistant
+
+If VISION does not understand a message, it will ask:
+
+```
+WOULD YOU LIKE TO SEARCH THIS ON GOOGLE?
+```
+
+Answer:
+
+```
+Y
+```
+
+to open a Google search automatically.
+
+---
+
+### Thank You Note Generator
+
+Type:
+
+```
+thank you note
+```
+
+The chatbot will ask for:
+
+* recipient name
+* reason
+* personal message
+
+Then generate a formatted **thank-you note**.
+
+---
+
+### Time and Date
+
+Commands:
+
+```
+time
+date
+```
+
+Example response:
+
+```
+THE CURRENT TIME : 10:30:12
+```
+
+---
+
+### Greetings
+
+VISION automatically responds to greetings:
+
+```
+hi
+hello
+hey
+```
+
+with time-based greetings such as:
+
+* Good Morning
+* Good Afternoon
+* Good Evening
+
+---
+
+# Technologies Used
+
+* HTML5
+* CSS3
+* JavaScript (Vanilla)
+* Web Speech API
+* Math.js Library
+
+---
+
+# Project Structure
+
+```
+vision-chatbot/
+│
+├── index.html
+├── style.css
+├── app.js
+└── README.md
+```
+
+---
+
+# How to Run
+
+1. Download or clone the repository
+
+```
+git clone https://github.com/yourusername/vision-chatbot.git
+```
+
+2. Open the project folder
+
+```
+cd vision-chatbot
+```
+
+3. Run the chatbot
+
+Simply open:
+
+```
+index.html
+```
+
+in your browser.
+
+No server required.
+
+---
+
+# Browser Support
+
+Best supported in:
+
+* Google Chrome
+* Microsoft Edge
+
+Voice recognition may not work in some browsers.
+
+---
+
+# User Interface
+
+VISION includes:
+
+* dark themed UI
+* animated background
+* voice input button
+* scrollable chat window
+* glowing interface design
+
+---
+
+# Author
+
+**Sayan**
+
+BCA Student
+Web AI Chatbot Project
+
+---
+
+# Educational Purpose
+
+This project demonstrates:
+
+* frontend chatbot development
+* browser speech APIs
+* JavaScript event handling
+* client-side AI utilities
+
+---
+
+# License
+
+Free to use for **learning and educational projects**.
